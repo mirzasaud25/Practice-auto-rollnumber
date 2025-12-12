@@ -1,0 +1,75 @@
+package staticpractice;
+
+import java.util.Date;
+
+class Student
+{
+    private String name;
+    private String Course;
+    private String RollNo;
+    
+    private static int count = 1;
+    
+    public Student(String name ,String Course)
+    {
+       this.name=name;
+       this.Course=Course;
+       RollNo=generateRollNo();
+    }
+    private String generateRollNo()
+    {
+       Date d=new Date();
+       String roll="Univercity-"+(d.getYear()+1900)+"-"+count;
+       count++;
+       return roll;
+        
+    }
+    public String getRollNo()
+    {
+        return RollNo;
+    }
+    public String toString()
+    {
+        return "Name :"+name+"\nCourse :"+Course+"\nRollNumber :"+RollNo;
+    }
+}
+
+
+public class Staticpractice {
+
+
+    public static void main(String[] args) 
+    {
+        Student s1=new Student("Mirza","Java");
+        Student s2=new Student ("John","Cs");
+        Student s3=new Student("Smith","Dsa");
+        Student s4=new Student ("Saud","Swift");
+        
+        
+        
+        System.out.println(s1.toString());
+        System.out.println(s2.toString());
+         System.out.println(s3.toString());
+        System.out.println(s4.toString());
+        
+ 
+    }
+    
+}
+
+
+
+run:
+Name :Mirza
+Course :Java
+RollNumber :Univercity-2025-1
+Name :John
+Course :Cs
+RollNumber :Univercity-2025-2
+Name :Smith
+Course :Dsa
+RollNumber :Univercity-2025-3
+Name :Saud
+Course :Swift
+RollNumber :Univercity-2025-4
+BUILD SUCCESSFUL (total time: 1 second)
